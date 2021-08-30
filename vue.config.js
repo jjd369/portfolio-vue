@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
     outputDir: 'docs',
-    publicPath: '/new-portfolio/main',
+    publicPath: '/portfolio-vue',
     configureWebpack: {
         resolve: {
             alias: {
@@ -13,7 +13,7 @@ module.exports = {
     css: {
         loaderOptions: {
             sass: {
-                data: `@import "@/assets/scss/common.scss";`
+                additionalData: `@import "@/assets/scss/common.scss";`
             }
         }
     }

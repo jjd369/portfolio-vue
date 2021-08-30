@@ -1,11 +1,25 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
 
 const routes = [
   {
-    path: "/",
+    path: "/portfolio-vue/",
     name: "Home",
-    component: Home,
+    children: [
+      {
+        path: "/main",
+        name: "main",
+        component: () =>
+          import(/* webpackChunkName: "main" */ "@/components/main.vue"),
+      },
+      {
+        path: "/about",
+        name: "about",
+        component: () =>
+          import(/* webpackChunkName: "about" */ "@/components/about.vue"),
+      },
+    ],
+    component: () =>
+      import(/* webpackChunkName: "layout" */ "@/views/layout.vue"),
   },
   {
     path: "/about",
